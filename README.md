@@ -1,32 +1,34 @@
 # 🫀 Heart Disease Prediction using R
 
-This project builds and evaluates multiple machine learning models to predict the likelihood of heart disease in patients based on clinical data. It uses the Cleveland Heart Disease dataset (accessed via Kaggle) and leverages R for data exploration, visualization, model training, and performance evaluation.
+This project builds and evaluates multiple machine learning models to predict the likelihood of heart disease in patients based on clinical and physiological data. It uses a cleaned version of the Cleveland Heart Disease dataset, accessed via Kaggle, and leverages R for comprehensive data analysis, visualization, and model evaluation.
 
 ---
 
 ## 📁 Dataset
 
-- **Source**: [Kaggle - Heart Disease Dataset](https://www.kaggle.com/datasets/fedesoriano/heart-failure-prediction)
+- **Source**: [Kaggle - Heart Disease Predictions by Desalegn Geb](https://www.kaggle.com/code/desalegngeb/heart-disease-predictions/notebook)
+- **Based on**: Cleveland Heart Disease dataset from the UCI Machine Learning Repository
 - **Records**: 303 patient entries
 - **Features**:
-  - Age, Sex, Chest Pain Type, Resting Blood Pressure, Cholesterol
-  - Fasting Blood Sugar, Resting ECG, Max Heart Rate, Exercise Induced Angina
-  - ST Depression, Slope of Peak Exercise, Major Vessels, Thalassemia
+  - Age, Sex, Chest Pain Type (`cp`), Resting Blood Pressure (`trestbps`)
+  - Cholesterol (`chol`), Fasting Blood Sugar (`fbs`), Resting ECG (`restecg`)
+  - Max Heart Rate (`thalach`), Exercise Induced Angina (`exang`)
+  - ST Depression (`oldpeak`), Slope of Peak Exercise, Major Vessels (`ca`), Thalassemia (`thal`)
 - **Target**: `target` (1 = heart disease, 0 = no heart disease)
 
 ---
 
 ## 📊 Exploratory Data Analysis
 
-- Correlation Matrix and Heatmap
-- Density plots for all numerical features
-- Boxplots of key health indicators vs. target
-- Categorical bar charts by target outcome
-- Pairplot of selected variables
+- Correlation heatmap using `corrplot`
+- Pairplot of selected numeric features using `GGally::ggpairs`
+- Density plots for all numeric features by `target`
+- Boxplots and barplots to compare features across target classes
+- Summary statistics using R's base functions and `dplyr`
 
 ---
 
-## 🤖 Models Used
+## 🤖 Machine Learning Models
 
 - **Random Forest**
 - **Support Vector Machine (SVM)**
@@ -38,8 +40,8 @@ Each model is evaluated using:
 - Precision
 - Recall
 - F1 Score
-- AUC (ROC Curve)
-- Confusion Matrix Heatmap
+- ROC Curve + AUC
+- Confusion Matrix (visualized as heatmaps)
 
 ---
 
@@ -51,35 +53,37 @@ Each model is evaluated using:
 | SVM           | 81.67%   | 80.77%    | 77.78% | 79.25%   | 0.870  |
 | XGBoost       | 75.00%   | 73.08%    | 70.37% | 71.70%   | 0.835  |
 
-> 📌 Random Forest had the highest AUC, while SVM achieved the best F1 Score.
+> 📌 **SVM** achieved the best F1 Score; **Random Forest** had the highest AUC.
 
 ---
 
 ## 📦 Tools & Libraries
 
-- **R**
-  - ggplot2, dplyr, caret, randomForest, e1071, xgboost, pROC, GGally
-- **Jupyter Notebook with R Kernel**
-- Visualizations using `ggplot2`, `patchwork`, and `GGally`
+- **Language**: R
+- **Libraries**:
+  - `ggplot2`, `dplyr`, `caret`, `randomForest`, `e1071`, `xgboost`, `pROC`, `GGally`, `corrplot`, `gridExtra`
+- **Environment**:
+  - Jupyter Notebook with IRkernel or RStudio
 
 ---
 
 ## 📝 How to Run
 
-1. Clone the repo
-2. Install required R packages (see script headers)
-3. Launch the Jupyter Notebook or run R script
-4. Make sure `heart.csv` is in the working directory
+1. Clone the repository
+2. Ensure `heart.csv` is in your working directory
+3. Launch `Heart_Disease_Prediction_using_R.ipynb` in Jupyter, or run the `.R` script
+4. Install required R packages if needed (see script header)
 
 ---
 
 ## 📄 License
 
-This project is for educational and non-commercial use only.
+This project is intended for educational and non-commercial use only.
 
 ---
 
 ## 🙌 Acknowledgments
 
 - UCI Machine Learning Repository
-- Kaggle contributors
+- Kaggle contributor [Desalegn Geb](https://www.kaggle.com/code/desalegngeb)
+- Open-source R community
