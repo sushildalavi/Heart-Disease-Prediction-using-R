@@ -1,6 +1,6 @@
-# 🫀 Heart Disease Prediction using R
+# 🧠 Scalable Heart Disease Prediction Using R and PySpark
 
-This project builds and evaluates multiple machine learning models to predict the likelihood of heart disease in patients based on clinical and physiological data. It uses a cleaned version of the Cleveland Heart Disease dataset, accessed via Kaggle, and leverages R for comprehensive data analysis, visualization, and model evaluation.
+This project builds a scalable machine learning pipeline to predict the likelihood of heart disease in patients using clinical and physiological data. It combines robust statistical modeling and visualization in R with simulated distributed data processing via PySpark and HDFS concepts, creating a hybrid workflow suitable for real-world healthcare analytics.
 
 ---
 
@@ -18,30 +18,37 @@ This project builds and evaluates multiple machine learning models to predict th
 
 ---
 
+## 🧪 Project Highlights
+
+- Developed a modular ML pipeline in R using Random Forest, SVM, and XGBoost
+- Simulated distributed healthcare analytics with PySpark and HDFS for scalable data processing
+- Used topic modeling techniques (LDA, NMF) for additional interpretability exploration
+- Visualized model performance through ROC curves, correlation heatmaps, and confusion matrix heatmaps
+
+---
+
 ## 📊 Exploratory Data Analysis
 
 - Correlation heatmap using `corrplot`
 - Pairplot of selected numeric features using `GGally::ggpairs`
-- Density plots for all numeric features by `target`
-- Boxplots and barplots to compare features across target classes
-- Summary statistics using R's base functions and `dplyr`
+- Density plots by `target`
+- Boxplots and barplots for feature comparison
+- Descriptive stats using `summary()` and `dplyr`
 
 ---
 
 ## 🤖 Machine Learning Models
 
-- **Random Forest**
-- **Support Vector Machine (SVM)**
-- **XGBoost**
-
-Each model is evaluated using:
-
-- Accuracy
-- Precision
-- Recall
-- F1 Score
-- ROC Curve + AUC
-- Confusion Matrix (visualized as heatmaps)
+- Random Forest (`randomForest`)
+- Support Vector Machine (SVM)
+- XGBoost (`xgboost`)
+- Performance Metrics:
+  - Accuracy
+  - Precision
+  - Recall
+  - F1 Score
+  - ROC Curve + AUC
+  - Confusion Matrix (heatmaps)
 
 ---
 
@@ -53,26 +60,29 @@ Each model is evaluated using:
 | SVM           | 81.67%   | 80.77%    | 77.78% | 79.25%   | 0.870  |
 | XGBoost       | 75.00%   | 73.08%    | 70.37% | 71.70%   | 0.835  |
 
-> 📌 **SVM** achieved the best F1 Score; **Random Forest** had the highest AUC.
+> ✅ SVM achieved the best F1 Score; Random Forest had the highest AUC.
 
 ---
 
-## 📦 Tools & Libraries
+## ⚙️ Tools & Libraries
 
-- **Language**: R
-- **Libraries**:
-  - `ggplot2`, `dplyr`, `caret`, `randomForest`, `e1071`, `xgboost`, `pROC`, `GGally`, `corrplot`, `gridExtra`
-- **Environment**:
-  - Jupyter Notebook with IRkernel or RStudio
+- **Language**: R, PySpark (for simulation)
+- **R Packages**:
+  - `caret`, `ggplot2`, `dplyr`, `xgboost`, `e1071`, `randomForest`, `pROC`, `GGally`, `corrplot`, `gridExtra`
+- **PySpark Components**:
+  - Basic use of `RDDs`, DataFrames, and `map-reduce` style operations for healthcare data simulation
+- **Topic Modeling**:
+  - LDA and NMF (exploratory integration)
 
 ---
 
-## 📝 How to Run
+## 🚀 How to Run
 
 1. Clone the repository
-2. Ensure `heart.csv` is in your working directory
-3. Launch `Heart_Disease_Prediction_using_R.ipynb` in Jupyter, or run the `.R` script
-4. Install required R packages if needed (see script header)
+2. Place `heart.csv` in the project root directory
+3. Run the R notebook (`.ipynb`) or script using Jupyter/IRkernel or RStudio
+4. (Optional) Explore `pyspark_simulation.py` for distributed simulation
+5. Install required packages using `install.packages()` and `pyspark` setup
 
 ---
 
@@ -84,6 +94,6 @@ This project is intended for educational and non-commercial use only.
 
 ## 🙌 Acknowledgments
 
-- UCI Machine Learning Repository
-- Kaggle contributor [Desalegn Geb](https://www.kaggle.com/code/desalegngeb)
-- Open-source R community
+- UCI Machine Learning Repository  
+- Kaggle contributor [Desalegn Geb](https://www.kaggle.com/code/desalegngeb)  
+- Apache Spark & Open Source R Community
