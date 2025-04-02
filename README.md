@@ -1,58 +1,59 @@
-# 🧠 Scalable Heart Disease Prediction Using R and PySpark
+# HeartFlow: Scalable ML-Driven Cardiovascular Risk Detection
 
-This project builds a scalable machine learning pipeline to predict the likelihood of heart disease in patients using clinical and physiological data. It combines robust statistical modeling and visualization in R with simulated distributed data processing via PySpark and HDFS concepts, creating a hybrid workflow suitable for real-world healthcare analytics.
+This project presents a hybrid machine learning workflow to predict the likelihood of heart disease using clinical and physiological data. The solution combines robust modeling and visualization in R with simulated distributed data processing using PySpark and HDFS concepts to demonstrate scalable healthcare analytics.
 
 ---
 
-## 📁 Dataset
+## Dataset
 
 - **Source**: [Kaggle - Heart Disease Predictions by Desalegn Geb](https://www.kaggle.com/code/desalegngeb/heart-disease-predictions/notebook)
 - **Based on**: Cleveland Heart Disease dataset from the UCI Machine Learning Repository
-- **Records**: 303 patient entries
+- **Samples**: 303 patient records
 - **Features**:
   - Age, Sex, Chest Pain Type (`cp`), Resting Blood Pressure (`trestbps`)
   - Cholesterol (`chol`), Fasting Blood Sugar (`fbs`), Resting ECG (`restecg`)
   - Max Heart Rate (`thalach`), Exercise Induced Angina (`exang`)
   - ST Depression (`oldpeak`), Slope of Peak Exercise, Major Vessels (`ca`), Thalassemia (`thal`)
-- **Target**: `target` (1 = heart disease, 0 = no heart disease)
+- **Label**: `target` (1 = presence of heart disease, 0 = absence)
 
 ---
 
-## 🧪 Project Highlights
+## Project Highlights
 
-- Developed a modular ML pipeline in R using Random Forest, SVM, and XGBoost
-- Simulated distributed healthcare analytics with PySpark and HDFS for scalable data processing
-- Used topic modeling techniques (LDA, NMF) for additional interpretability exploration
-- Visualized model performance through ROC curves, correlation heatmaps, and confusion matrix heatmaps
-
----
-
-## 📊 Exploratory Data Analysis
-
-- Correlation heatmap using `corrplot`
-- Pairplot of selected numeric features using `GGally::ggpairs`
-- Density plots by `target`
-- Boxplots and barplots for feature comparison
-- Descriptive stats using `summary()` and `dplyr`
+- Built an end-to-end ML pipeline in R with Random Forest, SVM, and XGBoost models.
+- Simulated distributed healthcare data ingestion and transformation using PySpark DataFrames and HDFS workflows.
+- Applied topic modeling (LDA, NMF) to explore interpretability and textual insights (conceptual integration).
+- Evaluated model performance with confusion matrix heatmaps, ROC curves, and correlation visualizations.
 
 ---
 
-## 🤖 Machine Learning Models
+## Exploratory Data Analysis
+
+- Correlation matrix visualized using `corrplot`
+- Pairplots using `GGally::ggpairs` for multivariate relationships
+- Density plots, boxplots, and barplots for feature-target comparisons
+- Summary statistics with `summary()` and `dplyr`
+
+---
+
+## Machine Learning Models
 
 - Random Forest (`randomForest`)
-- Support Vector Machine (SVM)
+- Support Vector Machine (`e1071`)
 - XGBoost (`xgboost`)
-- Performance Metrics:
-  - Accuracy
-  - Precision
-  - Recall
-  - F1 Score
-  - ROC Curve + AUC
-  - Confusion Matrix (heatmaps)
+
+Evaluation metrics include:
+
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- AUC and ROC curves
+- Confusion matrices (visualized)
 
 ---
 
-## 🧪 Results Summary
+## Results Summary
 
 | Model         | Accuracy | Precision | Recall | F1 Score | AUC    |
 |---------------|----------|-----------|--------|----------|--------|
@@ -60,40 +61,38 @@ This project builds a scalable machine learning pipeline to predict the likeliho
 | SVM           | 81.67%   | 80.77%    | 77.78% | 79.25%   | 0.870  |
 | XGBoost       | 75.00%   | 73.08%    | 70.37% | 71.70%   | 0.835  |
 
-> ✅ SVM achieved the best F1 Score; Random Forest had the highest AUC.
-
 ---
 
-## ⚙️ Tools & Libraries
+## Tools and Technologies
 
-- **Language**: R, PySpark (for simulation)
 - **R Packages**:
   - `caret`, `ggplot2`, `dplyr`, `xgboost`, `e1071`, `randomForest`, `pROC`, `GGally`, `corrplot`, `gridExtra`
-- **PySpark Components**:
-  - Basic use of `RDDs`, DataFrames, and `map-reduce` style operations for healthcare data simulation
+- **Big Data Simulation**:
+  - PySpark: DataFrames, RDDs, basic transformations
+  - HDFS-style file I/O (simulated)
 - **Topic Modeling**:
-  - LDA and NMF (exploratory integration)
+  - LDA and NMF (conceptual integration)
 
 ---
 
-## 🚀 How to Run
+## How to Run
 
 1. Clone the repository
-2. Place `heart.csv` in the project root directory
-3. Run the R notebook (`.ipynb`) or script using Jupyter/IRkernel or RStudio
-4. (Optional) Explore `pyspark_simulation.py` for distributed simulation
-5. Install required packages using `install.packages()` and `pyspark` setup
+2. Ensure `heart.csv` is placed in the project root
+3. Run the R Notebook or script in Jupyter (IRkernel) or RStudio
+4. Optionally, execute `pyspark_simulation.py` for Big Data simulation
+5. Install dependencies in R using `install.packages()` and configure PySpark if needed
 
 ---
 
-## 📄 License
+## License
 
-This project is intended for educational and non-commercial use only.
+This repository is intended for educational and research purposes only.
 
 ---
 
-## 🙌 Acknowledgments
+## Acknowledgments
 
 - UCI Machine Learning Repository  
-- Kaggle contributor [Desalegn Geb](https://www.kaggle.com/code/desalegngeb)  
-- Apache Spark & Open Source R Community
+- Kaggle contributor Desalegn Geb  
+- Apache Spark and the open-source R community
